@@ -37,7 +37,7 @@ pipeline{
         //state 3 publish artifacts to Nexus
         stage ('Publish to Nexus'){
             steps {
-                 nexusArtifactUploader artifacts: [[artifactId: 'Sile-KimanDevOpsLab', classifier: '', file: 'target/Sile-KimanDevOpsLab-0.0.4-SNAPSHOT.war', type: 'war']], credentialsId: '5801fc57-fe11-475f-b961-2c5c18f5cd87', groupId: 'com.Sile-Kimandevopslab', nexusUrl: '172.20.10.82:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'target', version: '0.0.4-SNAPSHOT'
+                 nexusArtifactUploader artifacts: [[artifactId: 'Sile-KimanDevOpsLab', classifier: '', file: 'target/Sile-KimanDevOpsLab-0.0.4-SNAPSHOT.war', type: 'war']], credentialsId: '7d9cc9b0-01e4-4445-bd12-17604b98cf93', groupId: 'com.Sile-Kimandevopslab', nexusUrl: '172.20.10.82:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Sile-KimanDevOpsLab-SNAPSHOT', version: '0.0.4-SNAPSHOT' 
             }
         }
 
