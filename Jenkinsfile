@@ -34,7 +34,13 @@ pipeline{
             }
         }
 
-        
+         // Stage2 : Testing
+        stage ('Deploy'){
+            steps {
+                echo ' deploying......'
+
+            }
+        }
         
     }
 
