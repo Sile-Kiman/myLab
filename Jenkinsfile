@@ -57,10 +57,10 @@ pipeline{
                    def NexusRepo = Version.endsWith("SNAPSHOT") ?  "Sile-KimanDevOpsLab-SNAPSHOT" : "Sile-KimanDevOpsLab-RELEASE"
                  
                  nexusArtifactUploader artifacts: 
-                   [artifactId: "${ArtifactId}", 
+                   [[artifactId: "${ArtifactId}", 
                    classifier: '', 
                    file: "target/${ArtifactId}-${Version}.war",
-                   type: "${Packaging}"], 
+                   type: "${Packaging}"]], 
                    credentialsId: '7d9cc9b0-01e4-4445-bd12-17604b98cf93', 
                    groupId: "${GroupId}", 
                    nexusUrl: '172.20.10.82:8081', 
