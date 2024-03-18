@@ -6,6 +6,7 @@ pipeline{
     }
 
     // Set Environment :  Moven utilies
+    stage ('Environment'){
         Environment{
             GroupId = readMavenPom().getGroupId()
             ArtifactId = readMavenPom().getArtifactId()
@@ -14,7 +15,7 @@ pipeline{
             Name = readMavenPom().getName()
 
             }
-        
+    }     
 
     stages {
         // Specify various stage with in stages
