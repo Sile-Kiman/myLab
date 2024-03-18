@@ -6,15 +6,14 @@ pipeline{
     }
 
     // Set Environment :  Moven utilies
-        Environment{
+        environment{
             GroupId = readMavenPom().getGroupId()
             ArtifactId = readMavenPom().getArtifactId()
             Packaging = readMavenPom().getPackaging()
             Version = readMavenPom().getVersion()
             Name = readMavenPom().getName()
 
-            }
-      
+    }
 
     stages {
         // Specify various stage with in stages
@@ -27,7 +26,7 @@ pipeline{
         }
 
         // Stage2 : Testing
-        stage ('Test'){
+        stage ('Pint Environment'){
             steps {
                 echo ' testing......'
                 echo  "Group Id is.. '${GroupId}'" 
