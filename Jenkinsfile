@@ -53,17 +53,17 @@ pipeline{
         stage ('Publish to Nexus'){
             steps {
                  nexusArtifactUploader artifacts: 
-                 [[artifactId: '${ArtifactId}', 
+                 [[artifactId: "${ArtifactId}", 
                    classifier: '', 
                    file: 'target/Sile-KimanDevOpsLab-0.0.4-SNAPSHOT.war',
-                   type: '${Packaging}']], 
+                   type: "${Packaging}"]], 
                    credentialsId: '7d9cc9b0-01e4-4445-bd12-17604b98cf93', 
-                   groupId: '${GroupId}', 
+                   groupId: "${GroupId}", 
                    nexusUrl: '172.20.10.82:8081', 
                    nexusVersion: 'nexus3', 
                    protocol: 'http', 
-                   repository: '${Name}-SNAPSHOT', 
-                   version: '${Version}' 
+                   repository: "${Name}"-SNAPSHOT, 
+                   version: "${Version}" 
             }
         }
 
