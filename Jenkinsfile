@@ -54,7 +54,7 @@ pipeline{
             steps {
 
                 script{
-                def NexusRepo = version.endwith("SNAPSHOT") ?  "Sile-KimanDevOpsLab-SNAPSHOT" : "Sile-KimanDevOpsLab-RELEASE"
+                def NexusRepo = Version.endwWth("SNAPSHOT") ?  "Sile-KimanDevOpsLab-SNAPSHOT" : "Sile-KimanDevOpsLab-RELEASE"
                  
                  nexusArtifactUploader artifacts: 
                    [artifactId: "${ArtifactId}", 
