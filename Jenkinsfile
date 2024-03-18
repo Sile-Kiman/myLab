@@ -59,7 +59,7 @@ pipeline{
                  nexusArtifactUploader artifacts: 
                    [artifactId: "${ArtifactId}", 
                    classifier: '', 
-                   file: 'target/Sile-KimanDevOpsLab-0.0.4-SNAPSHOT.war',
+                   file: "target/${ArtifactId}-${Version}.war",
                    type: "${Packaging}"], 
                    credentialsId: '7d9cc9b0-01e4-4445-bd12-17604b98cf93', 
                    groupId: "${GroupId}", 
