@@ -5,6 +5,17 @@ pipeline{
         maven 'maven'
     }
 
+    // Set Environment :  Moven utilies
+        Environment{
+            GroupId = readMavenPom().getGroupId()
+            ArtifactId = readMavenPom().getArtifactId()
+            Packaging = readMavenPom().getPackaging()
+            Version = readMavenPom().getVersion()
+            Name = readMavenPom().getName()
+
+            }
+        
+
     stages {
         // Specify various stage with in stages
 
@@ -19,6 +30,11 @@ pipeline{
         stage ('Test'){
             steps {
                 echo ' testing......'
+                echo "Group Id is.." ${GroupId } 
+                echo  "Artifact  Id is.." ${ArtifactId} 
+                echo  "Packaging   is.." ${Packaging} 
+                echo  "Version is.." ${Version} 
+                echo  "Name is.." ${Name} 
 
             }
         }
