@@ -52,8 +52,12 @@ pipeline{
         //state 3 publish artifacts to Nexus
         stage ('Publish to Nexus'){
             steps {
+
+                script{
+                def NexusRepo = version.endwith("SNAPSHOT") ?  "Sile-KimanDevOpsLab-SNAPSHOT" : "Sile-KimanDevOpsLab-RELEASE"
+                 
                  nexusArtifactUploader artifacts: 
-                 [[artifactId: "${ArtifactId}", 
+                   [artifactId: "${ArtifactId}", 
                    classifier: '', 
                    file: 'target/Sile-KimanDevOpsLab-0.0.4-SNAPSHOT.war',
                    type: "${Packaging}"]], 
@@ -63,7 +67,8 @@ pipeline{
                    nexusVersion: 'nexus3', 
                    protocol: 'http', 
                    repository: 'Sile-KimanDevOpsLab-SNAPSHOT', 
-                   version: "${Version}" 
+                   version: "${NexusRepo}" 
+              }
             }
         }
 
