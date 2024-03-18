@@ -66,8 +66,8 @@ pipeline{
                    nexusUrl: '172.20.10.82:8081', 
                    nexusVersion: 'nexus3', 
                    protocol: 'http', 
-                   repository: 'Sile-KimanDevOpsLab-SNAPSHOT', 
-                   version: "${NexusRepo}" 
+                   repository: "${NexusRepo}" , 
+                   version: "${Version}" 
               }
             }
         }
